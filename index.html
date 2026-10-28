@@ -4,24 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CV of Wachiravitch Thanyatorn - Information Technology Student">
-    <title>CV | Wachiravitch Thanyatorn</title>
+    <meta name="theme-color" content="#f8f9f5">
+    <meta name="description" content="Portfolio of Wachiravitch Thanyatorn, IT student and aspiring developer in Krabi, Thailand.">
+    <title>Wachiravitch Thanyatorn | Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <style>
         :root {
-            --primary: #345342;
-            --primary-light: #eaf0eb;
-            --text: #29332d;
-            --muted: #66716a;
-            --border: #dce3dd;
-            --paper: #ffffff;
-            --background: #f0f2ef;
+            --bg: #f8f9f5;
+            --surface: #ffffff;
+            --surface-soft: #eef1e9;
+            --text: #303b32;
+            --muted: #7b847c;
+            --accent: #64816b;
+            --accent-dark: #4d6753;
+            --accent-light: #dce7d8;
+            --border: #e3e8df;
+            --shadow: 0 12px 36px rgba(43, 57, 44, 0.06);
+            --radius: 22px;
+        }
+
+        .dark {
+            --bg: #171d18;
+            --surface: #202820;
+            --surface-soft: #293329;
+            --text: #edf1e9;
+            --muted: #aab5a8;
+            --accent: #9ab69a;
+            --accent-dark: #b4cbb0;
+            --accent-light: #304432;
+            --border: #354035;
+            --shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
         }
 
         * {
@@ -32,403 +50,849 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
 
         body {
-            font-family: 'Sarabun', sans-serif;
+            font-family: 'Inter', 'Kanit', sans-serif;
+            background: var(--bg);
             color: var(--text);
-            background: var(--background);
-            line-height: 1.75;
-            font-size: 14px;
+            line-height: 1.7;
+            transition: background 0.3s, color 0.3s;
         }
 
         a {
             color: inherit;
             text-decoration: none;
-            overflow-wrap: anywhere;
         }
 
-        .toolbar {
-            width: min(1000px, calc(100% - 32px));
-            margin: 24px auto 16px;
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
+        button {
+            font: inherit;
         }
 
-        .toolbar button {
-            padding: 10px 16px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            background: white;
-            color: var(--primary);
-            font-family: inherit;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 4px;
         }
 
-        .toolbar button:hover {
-            background: var(--primary);
-            color: white;
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin-inline: auto;
         }
 
-        .cv {
-            width: min(1000px, calc(100% - 32px));
-            margin: 0 auto 32px;
-            background: var(--paper);
-            box-shadow: 0 8px 35px rgba(30, 50, 35, 0.08);
+        .section {
+            padding: 100px 0;
         }
 
-        /* Header */
-        .cv-header {
-            display: grid;
-            grid-template-columns: 1fr 155px;
-            gap: 35px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
             align-items: center;
-            padding: 45px 48px 38px;
-            border-bottom: 3px solid var(--primary);
-        }
-
-        .cv-label {
-            color: var(--primary);
-            font-family: 'Inter', sans-serif;
+            gap: 8px;
+            color: var(--accent);
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        .cv-name {
+        .section-title {
             margin-top: 10px;
-            font-size: clamp(25px, 4vw, 36px);
-            line-height: 1.35;
-            font-weight: 700;
+            font-size: clamp(28px, 4vw, 38px);
+            line-height: 1.4;
+            letter-spacing: -0.7px;
         }
 
-        .cv-name-en {
-            margin-top: 4px;
-            color: var(--primary);
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .cv-position {
-            margin-top: 12px;
+        .section-description {
+            margin-top: 10px;
             color: var(--muted);
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        .profile-photo {
-            width: 145px;
-            height: 175px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            background: var(--primary-light);
+        .title-line {
+            width: 44px;
+            height: 4px;
+            margin: 18px auto 0;
+            border-radius: 10px;
+            background: var(--accent);
         }
 
-        .profile-photo img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 25%;
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: color-mix(in srgb, var(--bg) 88%, transparent);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
         }
 
-        .photo-placeholder {
-            width: 100%;
-            height: 100%;
+        .nav-inner {
+            min-height: 72px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .theme-toggle,
+        .menu-toggle {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            color: var(--text);
+            background: var(--surface);
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .theme-toggle:hover,
+        .menu-toggle:hover {
+            color: white;
+            background: var(--accent);
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 110px 0 100px;
+            background:
+                radial-gradient(circle at 90% 20%, rgba(183, 198, 178, 0.25), transparent 28%),
+                radial-gradient(circle at 5% 85%, rgba(217, 201, 167, 0.19), transparent 25%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 8px 13px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            background: var(--surface);
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .availability-dot {
+            width: 7px;
+            height: 7px;
+            background: #7d9b76;
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            margin: 25px 0 16px;
+            font-size: clamp(36px, 5.5vw, 61px);
+            line-height: 1.2;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--accent);
+        }
+
+        .hero-role {
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .hero-description {
+            max-width: 560px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .hero-location {
+            display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--primary);
+            margin-top: 18px;
+            color: var(--muted);
             font-size: 12px;
         }
 
-        .photo-placeholder i {
-            font-size: 32px;
+        .hero-location i {
+            color: var(--accent);
         }
 
-        /* Main layout */
-        .cv-body {
-            display: grid;
-            grid-template-columns: 1.45fr 0.85fr;
-        }
-
-        .main-column {
-            padding: 35px 38px 40px 48px;
-        }
-
-        .side-column {
-            padding: 35px 32px 40px;
-            background: #f8faf8;
-            border-left: 1px solid var(--border);
-        }
-
-        .section {
-            margin-bottom: 32px;
-            break-inside: avoid;
-        }
-
-        .section:last-child {
-            margin-bottom: 0;
-        }
-
-        .section-title {
+        .hero-actions {
             display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding-bottom: 9px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border);
-            color: var(--primary);
-            font-size: 16px;
-            font-weight: 700;
+            justify-content: center;
+            gap: 9px;
+            min-height: 46px;
+            padding: 12px 20px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: 0.25s;
+            cursor: pointer;
         }
 
-        .section-title i {
-            width: 18px;
-            font-size: 14px;
+        .btn-primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
         }
 
-        .section-title-en {
-            display: block;
-            margin-top: 1px;
-            color: var(--muted);
-            font-family: 'Inter', sans-serif;
-            font-size: 9px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
         }
 
-        .summary {
-            font-size: 13px;
-            line-height: 2;
-            text-align: justify;
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
         }
 
-        /* Education */
-        .entry {
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
             position: relative;
-            margin-bottom: 22px;
-            break-inside: avoid;
+            display: grid;
+            place-items: center;
+            min-height: 330px;
         }
 
-        .entry:last-child {
-            margin-bottom: 0;
+        .hero-orbit {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid var(--border);
+            border-radius: 50%;
         }
 
-        .entry-title {
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 1.7;
+        .hero-orbit::before,
+        .hero-orbit::after {
+            content: "";
+            position: absolute;
+            border: 1px solid var(--border);
+            border-radius: 50%;
         }
 
-        .entry-subtitle {
-            margin-top: 3px;
-            color: var(--primary);
-            font-size: 13px;
+        .hero-orbit::before {
+            inset: 22px;
+        }
+
+        .hero-orbit::after {
+            inset: 45px;
+        }
+
+        
+        .hero-monogram {
+            position: relative;
+            z-index: 1;
+            width: 250px;
+            height: 250px;
+            border-radius: 28%;
+            overflow: hidden;
+            background: #c8d7c3;
+            box-shadow: 0 25px 65px rgba(80, 110, 82, 0.18);
+            transform: rotate(-5deg);
+            transition: transform 0.4s ease;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center 25%;
+            transform: rotate(5deg) scale(1.08);
+        }
+
+        .hero-monogram:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        @media (max-width: 600px) {
+            .hero-monogram {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+
+        .floating-tag {
+            position: absolute;
+            z-index: 2;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+            font-size: 11px;
             font-weight: 600;
         }
 
-        .entry-date {
-            margin-top: 3px;
-            color: var(--muted);
-            font-family: 'Inter', sans-serif;
-            font-size: 10px;
+        .tag-code {
+            top: 30px;
+            right: 0;
         }
 
-        .entry-description {
+        .tag-design {
+            bottom: 38px;
+            left: 0;
+        }
+
+        .tag-iot {
+            right: 5px;
+            bottom: 10px;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .about-highlight {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 32px;
+            border-radius: var(--radius);
+            background: var(--accent);
+            color: white;
+            min-height: 290px;
+        }
+
+        .about-highlight > i {
+            font-size: 35px;
+            opacity: 0.85;
+        }
+
+        .about-highlight h3 {
+            margin-top: 30px;
+            font-size: 23px;
+            line-height: 1.5;
+        }
+
+        .about-highlight p {
+            margin-top: 10px;
+            color: rgba(255,255,255,0.8);
+            font-size: 12px;
+        }
+
+        .about-content {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+        }
+
+        .about-content h3 {
+            margin-bottom: 14px;
+            font-size: 21px;
+        }
+
+        .about-content p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 2.1;
+        }
+
+        .interest-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 22px;
+        }
+
+        .interest-chip {
+            padding: 8px 12px;
+            border-radius: 9px;
+            background: var(--surface-soft);
+            color: var(--accent-dark);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Education */
+        .education-section {
+            background: var(--surface-soft);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            bottom: 12px;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 30px 48px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 7px;
+            top: 5px;
+            width: 17px;
+            height: 17px;
+            border: 4px solid var(--surface-soft);
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent);
+        }
+
+        .education-card {
+            padding: 24px 26px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--surface);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .education-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+        }
+
+        .education-top {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .education-top h3 {
+            font-size: 16px;
+        }
+
+        .education-date {
+            padding: 5px 10px;
+            border-radius: 8px;
+            background: var(--surface-soft);
+            color: var(--accent-dark);
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .education-school {
             margin-top: 8px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .education-details {
+            margin-top: 10px;
             color: var(--muted);
             font-size: 12px;
             line-height: 1.9;
         }
 
         /* Skills */
-        .skill-group {
-            margin-bottom: 20px;
-            break-inside: avoid;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
         }
 
-        .skill-group:last-child {
-            margin-bottom: 0;
+        .skill-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--surface);
+            transition: 0.25s;
         }
 
-        .skill-group h3 {
-            margin-bottom: 8px;
-            font-size: 13px;
-            font-weight: 700;
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
         }
 
-        .skill-list {
-            padding-left: 18px;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .skill-list li {
-            padding-left: 2px;
-            margin-bottom: 4px;
-        }
-
-        .skill-list li::marker {
-            color: var(--primary);
-        }
-
-        /* Contact */
-        .contact-list {
-            list-style: none;
-        }
-
-        .contact-list li {
+        .skill-heading {
             display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 13px;
-            font-size: 12px;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 20px;
+        }
+
+        .skill-icon {
+            display: grid;
+            place-items: center;
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            border-radius: 14px;
+            background: var(--surface-soft);
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .skill-heading h3 {
+            font-size: 14px;
+        }
+
+        .skill-heading p {
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 7px 10px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            background: var(--bg);
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* Social */
+        .social-section {
+            background:
+                radial-gradient(circle at 5% 90%, rgba(183, 198, 178, 0.17), transparent 28%),
+                var(--bg);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .social-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--surface);
+            transition: 0.25s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .social-icon {
+            display: grid;
+            place-items: center;
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            border-radius: 15px;
+            background: var(--surface-soft);
+            color: var(--accent);
+            font-size: 22px;
+        }
+
+        .social-info {
+            min-width: 0;
+        }
+
+        .social-info h3 {
+            font-size: 14px;
+        }
+
+        .social-info p {
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 11px;
             overflow-wrap: anywhere;
         }
 
-        .contact-list i {
-            width: 16px;
-            margin-top: 5px;
-            color: var(--primary);
-            text-align: center;
-            flex-shrink: 0;
-        }
-
-        .contact-label {
-            display: block;
+        .social-arrow {
+            margin-left: auto;
             color: var(--muted);
-            font-size: 10px;
+            font-size: 13px;
         }
 
-        /* Interests */
-        .interest-list {
-            padding-left: 18px;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .interest-list li {
-            margin-bottom: 6px;
-        }
-
-        .cv-footer {
-            padding: 17px 48px;
+        /* Footer */
+        .footer {
+            padding: 28px 0;
             border-top: 1px solid var(--border);
-            color: var(--muted);
             text-align: center;
-            font-size: 10px;
+            color: var(--muted);
+            font-size: 11px;
         }
 
-        /* Mobile */
-        @media (max-width: 700px) {
-            .cv-header {
-                grid-template-columns: 1fr 100px;
-                gap: 18px;
-                padding: 28px 22px;
+        .footer span {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
             }
 
-            .profile-photo {
-                width: 100px;
-                height: 125px;
+            .hero-content {
+                text-align: center;
             }
 
-            .cv-name {
-                font-size: 24px;
+            .hero-description {
+                margin-inline: auto;
             }
 
-            .cv-name-en {
-                font-size: 13px;
-                overflow-wrap: anywhere;
+            .hero-location,
+            .hero-actions {
+                justify-content: center;
             }
 
-            .cv-position {
-                font-size: 12px;
+            .hero-visual {
+                min-height: 300px;
             }
 
-            .cv-body {
+            .about-grid {
                 grid-template-columns: 1fr;
             }
 
-            .main-column,
-            .side-column {
-                padding: 27px 22px;
+            .skills-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
-            .side-column {
-                border-left: 0;
-                border-top: 1px solid var(--border);
+            .social-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
-            .cv-footer {
-                padding-inline: 20px;
+            .nav-links {
+                gap: 14px;
             }
-        }
 
-        /* Print / Save as PDF */
-        @page {
-            size: A4;
-            margin: 10mm;
-        }
-
-        @media print {
-            body {
-                background: white;
+            .nav-links a {
                 font-size: 11px;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
             }
+        }
 
-            .toolbar {
-                display: none !important;
-            }
-
-            .cv {
-                width: 100%;
-                margin: 0;
-                box-shadow: none;
-            }
-
-            .cv-header {
-                padding: 25px 28px;
-                grid-template-columns: 1fr 125px;
-                gap: 24px;
-            }
-
-            .profile-photo {
-                width: 115px;
-                height: 140px;
-            }
-
-            .main-column {
-                padding: 25px 24px 25px 28px;
-            }
-
-            .side-column {
-                padding: 25px 22px;
+        @media (max-width: 600px) {
+            .container {
+                width: calc(100% - 32px);
             }
 
             .section {
-                margin-bottom: 22px;
+                padding: 70px 0;
             }
 
-            .entry {
-                margin-bottom: 15px;
+            .nav-inner {
+                min-height: 64px;
             }
 
-            .cv-footer {
-                padding: 12px 28px;
+            .brand {
+                font-size: 14px;
             }
 
-            a {
-                text-decoration: none;
+            .menu-toggle {
+                display: grid;
+            }
+
+            .nav-actions {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: calc(100% + 1px);
+                left: 0;
+                right: 0;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px 20px 16px;
+                border-bottom: 1px solid var(--border);
+                background: var(--bg);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 4px;
+                border-bottom: 1px solid var(--border);
+                font-size: 13px;
+            }
+
+            .nav-links a:last-child {
+                border-bottom: 0;
+            }
+
+            .hero {
+                padding: 70px 0 65px;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+                letter-spacing: -1.5px;
+            }
+
+            .hero-role {
+                font-size: 15px;
+            }
+
+            .hero-description {
+                font-size: 13px;
+            }
+
+            .hero-visual {
+                min-height: 270px;
+            }
+
+            .hero-orbit {
+                width: 250px;
+                height: 250px;
+            }
+
+            .hero-monogram {
+                width: 150px;
+                height: 150px;
+                border-radius: 38px;
+                font-size: 53px;
+            }
+
+            .tag-code {
+                right: 0;
+                top: 20px;
+            }
+
+            .tag-design {
+                left: 0;
+                bottom: 30px;
+            }
+
+            .tag-iot {
+                right: 0;
+                bottom: 5px;
+            }
+
+            .section-header {
+                margin-bottom: 32px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .about-highlight,
+            .about-content {
+                padding: 25px;
+            }
+
+            .skills-grid,
+            .social-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .education-card {
+                padding: 20px;
+            }
+
+            .education-top h3 {
+                font-size: 14px;
+            }
+
+            .social-card {
+                padding: 18px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
             }
         }
     </style>
@@ -436,243 +900,467 @@
 
 <body>
 
-    <div class="toolbar">
-        <button type="button" onclick="window.print()">
-            <i class="fas fa-file-pdf"></i>
-            พิมพ์ / บันทึกเป็น PDF
-        </button>
-    </div>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="brand">
+                W<span>.</span> THANYATORN
+            </a>
 
-    <main class="cv">
-
-        <!-- CV HEADER -->
-        <header class="cv-header">
-            <div>
-                <p class="cv-label">Curriculum Vitae</p>
-
-                <h1 class="cv-name">Wachiravitch Thanyatorn</h1>
-
-                <p class="cv-name-en">วชิรวิชญ์ ธัญญธร</p>
-
-                <p class="cv-name-en">รหัสนักศึกษา 68219010013</p>
-
-                <p class="cv-position">
-                    Information Technology Student
-                </p>
+            <div class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#social">Socials</a>
             </div>
 
-            <div class="profile-photo">
-                <!-- เปลี่ยนเป็น images/profile.jpg เมื่อมีรูป -->
-                <img src="images/profile.jpg" alt="Profile Photo">
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle"
+                        type="button" aria-label="เปลี่ยนธีม">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
 
-                <div class="photo-placeholder" style="display:none">
-                    <i class="fas fa-user"></i>
-                    <span>Profile Photo</span>
+                <button class="menu-toggle" id="menu-toggle"
+                        type="button" aria-label="เปิดเมนู"
+                        aria-expanded="false" aria-controls="nav-links">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+                    <div class="availability">
+                        <span class="availability-dot"></span>
+                        Student &amp; Aspiring Developer
+                    </div>
+
+                    <h1>
+                        Wachiravitch
+                        <span>Thanyatorn.</span>
+                    </h1>
+
+                    <p class="hero-role">
+                        นักเรียนเทคโนโลยีสารสนเทศ
+                    </p>
+
+                    <p class="hero-description">
+                        ผมสนใจการพัฒนาซอฟต์แวร์ การสร้างเว็บไซต์
+                        เทคโนโลยีฮาร์ดแวร์ และงานออกแบบสร้างสรรค์
+                        พร้อมเรียนรู้เทคโนโลยีใหม่ ๆ
+                        และนำความรู้มาพัฒนาเป็นผลงานจริง
+                    </p>
+
+                    <div class="hero-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Krabi, Thailand
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#about" class="btn btn-primary">
+                            <i class="fas fa-user"></i>
+                            เกี่ยวกับผม
+                        </a>
+
+                        <a href="#social" class="btn btn-secondary">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                            My Socials
+                        </a>
+                    </div>
+                </div>
+
+
+<div class="hero-visual" aria-label="รูปโปรไฟล์">
+
+    <div class="hero-orbit"></div>
+
+                    <!-- Profile Image -->
+                    <div class="hero-monogram">
+                        <img
+                            src="images/profile.jpg"
+                            alt="Wachiravitch Thanyatorn"
+                            class="profile-image"
+                        >
+                    </div>
+
+                    <div class="floating-tag tag-code">
+                        <i class="fas fa-code"></i> Coding
+                    </div>
+
+                    <div class="floating-tag tag-design">
+                        <i class="fas fa-pen-nib"></i> Creative Design
+                    </div>
+
+                    <div class="floating-tag tag-iot">
+                        <i class="fas fa-microchip"></i> Hardware / IoT
+                    </div>
+
+
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section" id="about">
+            <div class="container">
+
+                <header class="section-header">
+                    <span class="eyebrow">01 / About Me</span>
+                    <h2 class="section-title">แนะนำตัว</h2>
+                    <p class="section-description">
+                        A little introduction about who I am.
+                    </p>
+                    <div class="title-line"></div>
+                </header>
+
+                <div class="about-grid">
+
+                    <div class="about-highlight">
+                        <i class="fas fa-seedling"></i>
+
+                        <div>
+                            <h3>
+                                Learn.<br>
+                                Create.<br>
+                                Improve.
+                            </h3>
+
+                            <p>
+                                เติบโตผ่านการเรียนรู้และลงมือทำ
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-content">
+                        <h3>สวัสดีครับ ผมชื่อ Wachiravitch</h3>
+
+                        <p>
+                            ผมเป็นนักเรียนสาขาวิชาเทคโนโลยีสารสนเทศ
+                            จากวิทยาลัยเทคนิคกระบี่
+                            มีความสนใจและความหลงใหลในด้านเทคโนโลยี
+                            การพัฒนาซอฟต์แวร์ งานออกแบบสร้างสรรค์
+                            และโครงการด้านฮาร์ดแวร์หรือ IoT
+                        </p>
+
+                        <p style="margin-top: 12px;">
+                            ผมให้ความสำคัญกับการเรียนรู้พื้นฐานให้เข้าใจ
+                            การทดลองลงมือทำ และการพัฒนาทักษะอย่างต่อเนื่อง
+                            เพื่อสร้างผลงานที่มีประโยชน์และต่อยอดได้ในอนาคต
+                        </p>
+
+                        <div class="interest-list">
+                            <span class="interest-chip">Web Development</span>
+                            <span class="interest-chip">Programming</span>
+                            <span class="interest-chip">Database</span>
+                            <span class="interest-chip">Hardware / IoT</span>
+                            <span class="interest-chip">Creative Design</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </header>
+        </section>
 
-        <div class="cv-body">
+        <!-- EDUCATION -->
+        <section class="section education-section" id="education">
+            <div class="container">
 
-            <!-- MAIN COLUMN -->
-            <div class="main-column">
-
-                <section class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-user"></i>
-                        ประวัติและเป้าหมาย
-                        <span class="section-title-en">Professional Profile</span>
-                    </h2>
-
-                    <p class="summary">
-                        นักเรียนระดับประกาศนียบัตรวิชาชีพ สาขาวิชาเทคโนโลยีสารสนเทศ
-                        วิทยาลัยเทคนิคกระบี่ มีความสนใจด้านการพัฒนาซอฟต์แวร์
-                        การพัฒนาเว็บไซต์ การจัดการฐานข้อมูล และเทคโนโลยีฮาร์ดแวร์
-                        รวมถึง Internet of Things (IoT) สนใจเรียนรู้และพัฒนาทักษะ
-                        ผ่านการศึกษาและการลงมือปฏิบัติ เพื่อนำความรู้ไปประยุกต์ใช้
-                        ในการพัฒนาโครงการและการทำงานด้านเทคโนโลยีสารสนเทศในอนาคต
+                <header class="section-header">
+                    <span class="eyebrow">02 / Education</span>
+                    <h2 class="section-title">ประวัติการศึกษา</h2>
+                    <p class="section-description">
+                        My educational journey.
                     </p>
-                </section>
+                    <div class="title-line"></div>
+                </header>
 
-                <section class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-graduation-cap"></i>
-                        ประวัติการศึกษา
-                        <span class="section-title-en">Education</span>
-                    </h2>
+                <div class="timeline">
 
-                    <article class="entry">
-                        <h3 class="entry-title">
-                            ประกาศนียบัตรวิชาชีพ (ปวช.)
-                        </h3>
+                    <article class="timeline-item">
+                        <span class="timeline-dot"></span>
 
-                        <p class="entry-subtitle">
-                            วิทยาลัยเทคนิคกระบี่
-                        </p>
+                        <div class="education-card">
+                            <div class="education-top">
+                                <h3>Vocational Certificate (ปวช.)</h3>
+                                <span class="education-date">
+                                    2025 – Present
+                                </span>
+                            </div>
 
-                        <p class="entry-date">
-                            2025 – Present · ระดับ ปวช. 2
-                        </p>
+                            <p class="education-school">
+                                วิทยาลัยเทคนิคกระบี่ · Krabi Technical College
+                            </p>
 
-                        <p class="entry-description">
-                            สาขาวิชาเทคโนโลยีสารสนเทศ
-                            <br>
-                            เนื้อหาที่สนใจ: Web Development, Database Management,
-                            Python Programming และ Computer Hardware / IoT
-                        </p>
+                            <p class="education-details">
+                                สาขาวิชาเทคโนโลยีสารสนเทศ · ระดับ ปวช. 2
+                                <br>
+                                Focus: Web Development, Database Management,
+                                Python Programming และ Computer Hardware / IoT
+                            </p>
+                        </div>
                     </article>
 
-                    <article class="entry">
-                        <h3 class="entry-title">
-                            มัธยมศึกษาตอนต้น
-                        </h3>
+                    <article class="timeline-item">
+                        <span class="timeline-dot"></span>
 
-                        <p class="entry-subtitle">
-                            โรงเรียนอำมาตย์พานิชนุกูล
-                        </p>
+                        <div class="education-card">
+                            <div class="education-top">
+                                <h3>Junior High School</h3>
+                            </div>
 
-                        <p class="entry-date">
-                            Ammatpanichnukul School
-                        </p>
+                            <p class="education-school">
+                                โรงเรียนอำมาตย์พานิชนุกูล
+                            </p>
+
+                            <p class="education-details">
+                                Ammatpanichnukul School
+                            </p>
+                        </div>
                     </article>
 
-                    <article class="entry">
-                        <h3 class="entry-title">
-                            ประถมศึกษา
-                        </h3>
+                    <article class="timeline-item">
+                        <span class="timeline-dot"></span>
 
-                        <p class="entry-subtitle">
-                            โรงเรียนเทศบาล ๓ ท่าแดง
-                        </p>
+                        <div class="education-card">
+                            <div class="education-top">
+                                <h3>Primary School</h3>
+                            </div>
 
-                        <p class="entry-date">
-                            Thesaban 3 Thadaeng School
-                        </p>
+                            <p class="education-school">
+                                โรงเรียนเทศบาล ๓ ท่าแดง
+                            </p>
+
+                            <p class="education-details">
+                                Thesaban 3 Thadaeng School
+                            </p>
+                        </div>
                     </article>
-                </section>
 
-                <section class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-laptop-code"></i>
-                        ทักษะด้านเทคโนโลยี
-                        <span class="section-title-en">Technical Skills</span>
-                    </h2>
+                </div>
+            </div>
+        </section>
 
-                    <div class="skill-group">
-                        <h3>Programming &amp; Web Development</h3>
-                        <ul class="skill-list">
-                            <li>Python, PHP และ C</li>
-                            <li>HTML5 และ CSS3</li>
-                            <li>MySQL และการจัดการฐานข้อมูล</li>
-                        </ul>
-                    </div>
+        <!-- SKILLS -->
+        <section class="section" id="skills">
+            <div class="container">
 
-                    <div class="skill-group">
-                        <h3>Tools &amp; Hardware</h3>
-                        <ul class="skill-list">
-                            <li>Visual Studio Code (VS Code)</li>
-                            <li>Arduino และเทคโนโลยี IoT</li>
-                            <li>ความสนใจด้านคอมพิวเตอร์ฮาร์ดแวร์</li>
-                        </ul>
-                    </div>
+                <header class="section-header">
+                    <span class="eyebrow">03 / Skills &amp; Technologies</span>
+                    <h2 class="section-title">ทักษะและเทคโนโลยี</h2>
+                    <p class="section-description">
+                        Technologies and tools I am learning and exploring.
+                    </p>
+                    <div class="title-line"></div>
+                </header>
 
-                    <div class="skill-group">
-                        <h3>Design &amp; Multimedia</h3>
-                        <ul class="skill-list">
-                            <li>Figma</li>
-                            <li>Adobe Photoshop และ Illustrator</li>
-                            <li>Adobe After Effects</li>
-                        </ul>
-                    </div>
-                </section>
+                <div class="skills-grid">
+
+                    <!-- Programming -->
+                    <article class="skill-card">
+                        <div class="skill-heading">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>
+                                <h3>Programming</h3>
+                                <p>Languages &amp; Web</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </article>
+
+                    <!-- Tools -->
+                    <article class="skill-card">
+                        <div class="skill-heading">
+                            <div class="skill-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h3>Tools &amp; Hardware</h3>
+                                <p>Development &amp; IoT</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-tags">
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Arduino</span>
+                            <span class="skill-tag">Computer Hardware</span>
+                            <span class="skill-tag">IoT Projects</span>
+                        </div>
+                    </article>
+
+                    <!-- Design -->
+                    <article class="skill-card">
+                        <div class="skill-heading">
+                            <div class="skill-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div>
+                                <h3>Design &amp; Multimedia</h3>
+                                <p>Creative Tools</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-tags">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Photoshop</span>
+                            <span class="skill-tag">Illustrator</span>
+                            <span class="skill-tag">After Effects</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SOCIALS -->
+        <section class="section social-section" id="social">
+            <div class="container">
+
+                <header class="section-header">
+                    <span class="eyebrow">04 / Find Me Online</span>
+                    <h2 class="section-title">ช่องทางออนไลน์</h2>
+                    <p class="section-description">
+                        Connect with me and explore my online profiles.
+                    </p>
+                    <div class="title-line"></div>
+                </header>
+
+                <div class="social-grid">
+
+                    <a class="social-card"
+                       href="https://www.github.com/mznimk"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <div class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+
+                        <div class="social-info">
+                            <h3>GitHub</h3>
+                            <p>github.com/mznimk</p>
+                        </div>
+
+                        <i class="fas fa-arrow-up-right-from-square social-arrow"></i>
+                    </a>
+
+                    <a class="social-card"
+                       href="https://www.twitch.tv/mznimk"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <div class="social-icon">
+                            <i class="fab fa-twitch"></i>
+                        </div>
+
+                        <div class="social-info">
+                            <h3>Twitch</h3>
+                            <p>twitch.tv/mznimk</p>
+                        </div>
+
+                        <i class="fas fa-arrow-up-right-from-square social-arrow"></i>
+                    </a>
+
+                    <a class="social-card"
+                       href="https://discord.com/users/mznimk"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <div class="social-icon">
+                            <i class="fab fa-discord"></i>
+                        </div>
+
+                        <div class="social-info">
+                            <h3>Discord</h3>
+                            <p>mznimk</p>
+                        </div>
+
+                        <i class="fas fa-arrow-up-right-from-square social-arrow"></i>
+                    </a>
+
+                </div>
 
             </div>
-
-            <!-- SIDE COLUMN -->
-            <aside class="side-column">
-
-                <section class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-address-card"></i>
-                        ข้อมูลติดต่อ
-                        <span class="section-title-en">Contact</span>
-                    </h2>
-
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <span class="contact-label">ที่อยู่</span>
-                                จังหวัดกระบี่ ประเทศไทย
-                            </div>
-                        </li>
-
-                        <li>
-                            <i class="fab fa-github"></i>
-                            <div>
-                                <span class="contact-label">GitHub</span>
-                                <a href="https://github.com/mznimk"
-                                   target="_blank"
-                                   rel="noopener noreferrer">
-                                    github.com/mznimk
-                                </a>
-                            </div>
-                        </li>
-
-                        <li>
-                            <i class="fab fa-twitch"></i>
-                            <div>
-                                <span class="contact-label">Twitch</span>
-                                <a href="https://twitch.tv/mznimk"
-                                   target="_blank"
-                                   rel="noopener noreferrer">
-                                    twitch.tv/mznimk
-                                </a>
-                            </div>
-                        </li>
-
-                        <li>
-                            <i class="fab fa-discord"></i>
-                            <div>
-                                <span class="contact-label">Discord</span>
-                                mznimk
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <section class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-bullseye"></i>
-                        ความสนใจ
-                        <span class="section-title-en">Areas of Interest</span>
-                    </h2>
-
-                    <ul class="interest-list">
-                        <li>การพัฒนาเว็บไซต์และซอฟต์แวร์</li>
-                        <li>การเขียนโปรแกรม</li>
-                        <li>การจัดการฐานข้อมูล</li>
-                        <li>คอมพิวเตอร์ฮาร์ดแวร์และ IoT</li>
-                        <li>การออกแบบดิจิทัลและมัลติมีเดีย</li>
-                    </ul>
-                </section>
-
-                
-
-            </aside>
-
-        </div>
-
-        <footer class="cv-footer">
-            Wachiravitch Thanyatorn · Curriculum Vitae ·
-            <span id="year"></span>
-        </footer>
+        </section>
 
     </main>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            Designed &amp; Developed by
+            <span>Wachiravitch Thanyatorn</span>
+            · <span id="year"></span>
+        </div>
+    </footer>
+
     <script>
+        // Dynamic year
         document.getElementById('year').textContent =
             new Date().getFullYear();
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        function setTheme(isDark) {
+            document.documentElement.classList.toggle('dark', isDark);
+
+            themeIcon.className = isDark
+                ? 'fas fa-sun'
+                : 'fas fa-moon';
+
+            themeToggle.setAttribute(
+                'aria-label',
+                isDark ? 'Switch to light mode' : 'Switch to dark mode'
+            );
+        }
+
+        setTheme(
+            window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches
+        );
+
+        themeToggle.addEventListener('click', () => {
+            setTheme(
+                !document.documentElement.classList.contains('dark')
+            );
+        });
+
+        // Mobile navigation
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = menuToggle.querySelector('i');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuIcon.className = isOpen
+                ? 'fas fa-xmark'
+                : 'fas fa-bars';
+        });
+
+        // Close mobile navigation after selecting a section
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuIcon.className = 'fas fa-bars';
+            });
+        });
     </script>
 
 </body>
